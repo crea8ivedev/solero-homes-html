@@ -1,10 +1,23 @@
 // Header sticky
+let isSticky = false;
+let shrinkTimeout;
+
 window.addEventListener('scroll', function () {
-  var header = document.querySelector('.header');
-  if (window.scrollY > 100) { // Adjust value as needed
-    header.classList.add('sticky');
+  const header = document.querySelector('.header');
+
+  if (window.scrollY > 100) {
+    if (!isSticky) {
+      isSticky = true;
+      header.classList.add('sticky');
+
+      shrinkTimeout = setTimeout(() => {
+        header.classList.add('shrink-logo');
+      }, 1000);
+    }
   } else {
-    header.classList.remove('sticky');
+    isSticky = false;
+    header.classList.remove('sticky', 'shrink-logo');
+    clearTimeout(shrinkTimeout);
   }
 });
 

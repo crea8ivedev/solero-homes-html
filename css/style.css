@@ -283,6 +283,7 @@ br {
     width: 100%;
     animation: smoothScrolldown 1s forwards;
     background-color: var(--bs-black2);
+    box-shadow: 0 2px 10px rgba(214, 183, 93, 0.2);
 }
 
 .header .navbar {
@@ -330,6 +331,14 @@ br {
 
 .header .navbar .navbar-brand img {
     display: block;
+    width: 100%;
+    max-width: 185px;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.header.shrink-logo .navbar .navbar-brand img {        
+    max-width: 140px;
 }
 
 .navbar-collapse {
@@ -912,6 +921,10 @@ br {
 		}
 	}
 }
+
+video::-webkit-media-controls {
+  display: none !important;
+}
 /* Video tour end */
 
 /* Client reviews start */
@@ -1243,9 +1256,42 @@ br {
 
 .floor-plan-map-wrapper {
     padding: 110px 16px 0;
+
+    @media (max-width: 1024px) {
+        padding: 80px 16px 0;
+    }
 }
 
 .floor-plan-map-wrapper .container {
     max-width: 1170px !important;
 }
+
+.floor-plan-map-wrapper .floor-map-wrapper {    
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #dad867;
+    text-align: center;
+    margin-bottom: 24px;
+
+    img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+.floor-plan-map-wrapper .col-xl-6:last-child .floor-map-wrapper {
+    margin-bottom: 0;
+}
+
+.floor-plan-map-wrapper .floor-map-wrapper .heading {
+    margin-bottom: 20px;
+
+    h6 {
+        @media (max-width: 1024px) {
+            font-size: var(--fs-20);
+        }
+    }
+}
+
 /* Floor plans end */
