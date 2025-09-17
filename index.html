@@ -278,13 +278,16 @@
                         <h2>Solero Homes Video Tour</h2>
                         <img src="images/arrow.svg" width="84" height="122" alt="Arrow">
                     </div>
-                    <div class="video-container">
-                        <video src="" muted loop playinline></video>
-                        <button id="playPauseBtn" class="play-btn">
-                            <img src="images/play-icon.png" width="150" height="150" alt="Play icon">
-                        </button>
-                        <div class="logo-wrapper">
-                            <img src="images/white-logo.png" width="800" height="400" alt="White logo">
+
+                    <div class="video-container" id="video-container">
+                        <video controls id="video" preload="metadata" poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.jpg">
+                            <source src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4" type="video/mp4">
+                        </video>
+
+                        <div class="play-button-wrapper">
+                            <div title="Play video" class="play-gif" id="circle-play-b">
+                                <img src="images/play-icon.png" width="150" height="150" alt="Play icon">
+                            </div>
                         </div>
                     </div>
                 </div>

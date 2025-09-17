@@ -18,6 +18,7 @@
     --fs-25: 25px;
     --fs-28: 28px;
     --fs-30: 30px;
+    --fs-36: 36px;
     --fs-40: 40px;
     --fs-45: 45px;
     --fs-65: 65px;
@@ -276,10 +277,12 @@ br {
     transition-timing-function: linear;
 }
 
-header.header.is-sticky {
+.header.sticky {
     position: fixed;
+    top: 0;
+    width: 100%;
     animation: smoothScrolldown 1s forwards;
-    background-color: var(--bs-white);
+    background-color: var(--bs-black2);
 }
 
 .header .navbar {
@@ -291,6 +294,27 @@ header.header.is-sticky {
 
     @media (max-width: 767px) {
         padding: 20px 16px;
+    }
+}
+
+.header.sticky .navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tablet-view {
+    @media (min-width: 1201px) {
+        display: none;
+    }
+}
+
+.header.sticky .tablet-view {
+    display: flex;
+    justify-content: center;
+    width: 33%;
+
+    @media (max-width: 1200px) {
+        width: auto;
     }
 }
 
@@ -309,6 +333,8 @@ header.header.is-sticky {
 }
 
 .navbar-collapse {
+    width: 33%;
+
     @media (max-width: 1200px) {
         background-color: var(--bs-black2);
         padding: 20px 30px;
@@ -458,6 +484,12 @@ header.header.is-sticky {
 }
 
 .header .contact-btn {
+    width: 33%;
+
+    @media (max-width: 1200px) {
+        width: auto;
+    }
+
     @media (max-width: 767px) {
         display: none;
     }
@@ -480,12 +512,6 @@ header.header.is-sticky {
 
     &:hover {
         color: var(--bs-gold);
-    }
-}
-
-.tablet-view {
-    @media (min-width: 1201px) {
-        display: none;
     }
 }
 /* Header end */
@@ -840,60 +866,51 @@ header.header.is-sticky {
 }
 
 .video-container {
-    position: relative;
-    width: 100%;
+	width: 100%;
     max-width: 1170px;
+	border-radius: 20px;
     aspect-ratio: 16 / 9;
+	margin: 0 auto;
     overflow: hidden;
-    background-color: var(--bs-black2);
-    margin: 0 auto;
-    border-radius: 20px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    background-image: url(/images/video-bg-img.webp);
+    background-size: cover;
+    background-position: center;
+
+	video {
+		width: 100%;
+		height: auto;
+        display: block;
+	}
 }
 
-.video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+.play-button-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: auto;
+	pointer-events: none;
+    
+	#circle-play-b {
+		cursor: pointer;
+		pointer-events: auto;
 
-.play-btn {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    font-size: 40px;
-    border: none;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: transparent;
-}
-
-.play-btn img {
-    @media (max-width: 767px) {
-        width: 100%;
-        height: auto;
-    }
-}
-
-.video-container .logo-wrapper {
-    position: absolute;
-    top: 62%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9;
-}
-
-.video-container .logo-wrapper img {
-    @media (max-width: 992px) {
-        width: 100%;
-        height: auto;
-    }
+		img {
+			width: 100px;
+			height: 100px;
+			cursor: pointer;
+			border-radius: 50%;
+		}
+	}
 }
 /* Video tour end */
 
@@ -1189,3 +1206,46 @@ header.header.is-sticky {
     }
 }
 /* Footer end */
+
+/* Floor plans start */
+.banner-wrapper .banner-details .header-details {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    margin: 120px auto 250px;
+
+    @media (max-width: 1200px) {
+        margin: 50px auto;
+    }
+}
+
+.banner-details .header-details .heading,
+.banner-details .header-details .sub-heading {
+    margin: 0 auto;
+}
+
+.banner-details .header-details .heading h1 {
+    font-size: clamp(2.25rem, 2.8vw + 1rem, 4.125rem) !important;
+}
+
+.banner-details .header-details .sub-heading h6 {
+    font-weight: 400;
+    font-size: var(--fs-36) !important;
+
+    @media (max-width: 1200px) {
+        font-size: var(--fs-28) !important;
+    }
+
+    @media (max-width: 768px) {
+        font-size: var(--fs-24) !important;
+    }
+}
+
+.floor-plan-map-wrapper {
+    padding: 110px 16px 0;
+}
+
+.floor-plan-map-wrapper .container {
+    max-width: 1170px !important;
+}
+/* Floor plans end */
