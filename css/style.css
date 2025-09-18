@@ -579,10 +579,6 @@ br {
 }
 
 .banner-wrapper .banner-details {
-    /* background-image: url('/images/banner-center-img.webp');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
     width: 100%;
     max-width: 544px;
     border-radius: 30px;
@@ -679,6 +675,14 @@ br {
 /* Welcome start */
 .welcome-wrapper {
     padding: 110px 16px 60px;
+
+    @media (max-width: 1024px) {
+        padding: 80px 30px 60px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 80px 16px 60px;
+    }
 }
 
 .welcome-wrapper .title img {
@@ -706,6 +710,10 @@ br {
     background: var(--bs-black2);
 
     @media (max-width: 1024px) {
+        padding: 80px 30px;
+    }
+
+    @media (max-width: 767px) {
         padding: 80px 16px;
     }
 }
@@ -857,8 +865,12 @@ br {
 /* Video tour start */
 .video-tour-wrapper {
     padding: 110px 16px;
-
+    
     @media (max-width: 1024px) {
+        padding: 80px 30px;
+    }
+
+    @media (max-width: 767px) {
         padding: 80px 16px;
     }
 }
@@ -937,12 +949,21 @@ video::-webkit-media-controls {
     padding: 0 16px 110px;
 
     @media (max-width: 1024px) {
+        padding: 0 30px 80px;
+    }
+
+    @media (max-width: 767px) {
         padding: 0 16px 80px;
     }
 }
 
 .client-review-wrapper .title {
     margin: 0 auto 30px;
+}
+
+.client-review-wrapper .title h2 {
+    max-width: 187px;
+    margin: 0 auto;
 }
 
 .client-review-wrapper .review-slider .swiper-pagination {
@@ -1121,6 +1142,7 @@ video::-webkit-media-controls {
         color: var(--bs-gold);
     }
 }
+
 .main-menu li a {
     position: relative;
 }
@@ -1228,6 +1250,7 @@ video::-webkit-media-controls {
 /* Floor plans start */
 .banner-wrapper .banner-wrapper {
     height: 812px;
+    background-color: transparent;
 
     @media (max-width: 1200px) {
         height: auto;
@@ -1334,6 +1357,8 @@ video::-webkit-media-controls {
     margin-bottom: 20px;
 
     h6 {
+        color: var(--bs-black);
+
         @media (max-width: 1024px) {
             font-size: var(--fs-20);
         }
@@ -1341,3 +1366,96 @@ video::-webkit-media-controls {
 }
 
 /* Floor plans end */
+
+/* Construction start */
+.construction-wrapper {
+    padding: 110px 30px 0;
+
+    @media (max-width: 1024px) {
+        padding: 80px 30px 0;
+    }
+
+    @media (max-width: 767px) {
+        padding: 80px 16px 0;
+    }
+}
+
+.construction-wrapper .grid-box {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.construction-wrapper .img-box-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 26px;
+    border-radius: 20px;
+    border: 2px solid #dad867;
+    position: relative;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.construction-wrapper .container {
+    max-width: 1170px !important;
+}
+
+.construction-wrapper .img-box-wrapper .img {
+    width: 40%;
+
+    @media (max-width: 800px) {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 232px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+}
+
+.construction-wrapper .img-box-wrapper .img-label {
+    background: var(--bs-black2);
+    padding: 2px 16px;
+    width: fit-content;
+    text-transform: uppercase;
+    position: absolute;
+    left: -2px;
+    top: 42px;
+}
+
+.construction-wrapper .img-box-wrapper .content-wrapper {
+    width: 60%;
+
+    .content h6 {
+        font-weight: 600;
+        color: var(--bs-black);
+        margin-bottom: 20px;
+    }
+    
+    .content p {
+        color: var(--bs-black);
+    }
+
+    @media (max-width: 800px) {
+        width: 100%;
+
+        .content h6 {
+            font-size: var(--fs-20) !important;
+            margin-bottom: 16px;
+        }
+
+        .content p {
+            font-size: var(--fs-16);
+            line-height: 26px;
+        }
+    }
+}
+/* Construction end */

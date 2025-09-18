@@ -26,7 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var swiper = new Swiper('.service-slider', {
     loop: true,
     slidesPerView: 1,
-    autoplay: true,
+    speed: 1000,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -37,7 +41,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var swiper = new Swiper('.review-slider', {
     loop: true,
     slidesPerView: 1,
-    autoplay: true,
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
