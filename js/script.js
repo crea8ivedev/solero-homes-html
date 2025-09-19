@@ -84,4 +84,15 @@ document.addEventListener('DOMContentLoaded', function () {
   video.addEventListener("pause", function () {
     circlePlayButton.style.opacity = 1;
   });
+
+  // 	hide form success & error message
+  document.addEventListener('wpcf7submit', function () {
+    const responseOutput = document.querySelector('.wpcf7-response-output');
+    if (responseOutput) {
+      setTimeout(function () {
+        responseOutput.classList.add('hide');
+        setTimeout(() => responseOutput.style.display = 'none', 1000); // Wait for fade-out to complete
+      }, 5000);
+    }
+  }, false);
 });
