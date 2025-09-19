@@ -150,7 +150,7 @@ h2 {
     line-height: 120%;
 
     @media (max-width: 1440px) {
-        font-size: clamp(1.75rem, 2.8vw + 1rem, 2.5rem);
+        font-size: clamp(1.75rem, 2.8vw + 1rem, 2.25rem);
     }
 
     @media (max-width: 1024px) {
@@ -885,13 +885,14 @@ br {
 .img-wrapper .download-btn .btn-custom a {
     padding: 9px 44px 9px 70px;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1440px) {
         padding: 9px 20px;
     }
 }
 
 .img-wrapper .download-btn .btn-custom a>span {
-    width: 90%;
+    width: 94%;
+    padding-right: 12px;
 }
 
 .img-wrapper .download-btn .btn-custom a .img {
@@ -1343,13 +1344,21 @@ video::-webkit-media-controls {
     display: none;
 }
 
-.footer .wpcf7-response-output {
+.footer form .wpcf7-response-output {
     margin: 1em 0 0 !important;
     padding: 0 !important;
-    border: 0 !important;
-    color: green !important;
+    border: 0 !important;    
     font-size: var(--fs-14) !important;
- 	transition: opacity 1s ease;
+    line-height: 22px !important;
+	transition: opacity 1s ease;
+}
+
+.footer form.invalid .wpcf7-response-output {
+	color: red !important;
+}
+
+.footer form.sent .wpcf7-response-output {
+	color: green !important;
 }
 
 .footer .wpcf7-response-output.hide {
@@ -1745,6 +1754,20 @@ video::-webkit-media-controls {
     }
 }
 
+.quality-home-wrapper.paading-top {
+    @media (max-width: 1440px) {
+        padding: 80px 30px;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 80px 30px 60px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 80px 16px 50px;
+    }
+}
+
 .quality-home-wrapper.fixtures-wrapper {
     background-image: url(/images/zikzag-bg-img.webp);
     background-size: cover;
@@ -1800,12 +1823,14 @@ video::-webkit-media-controls {
         object-fit: cover;
     }
 
-    @media (max-width: 992px) {
-        width: 100%;
-
+    @media (max-width: 1024px) {
         img {
             height: auto;
         }
+    }
+
+    @media (max-width: 992px) {
+        width: 100%;        
     }
 }
 
@@ -1863,3 +1888,22 @@ video::-webkit-media-controls {
     }
 }
 /* Standard feature details end */
+
+/* Solero homes features start */
+.download-pdf-wrapper {
+    padding: 60px 30px 0;
+    text-align: center;
+
+    @media (max-width: 1440px) {
+        padding: 50px 30px 0;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 40px 30px 0;
+    }
+
+    @media (max-width: 767px) {
+        padding: 40px 16px 0;
+    }
+}
+/* Solero homes features end */

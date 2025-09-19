@@ -84,15 +84,26 @@ document.addEventListener('DOMContentLoaded', function () {
   video.addEventListener("pause", function () {
     circlePlayButton.style.opacity = 1;
   });
-
-  // 	hide form success & error message
-  document.addEventListener('wpcf7submit', function () {
-    const responseOutput = document.querySelector('.wpcf7-response-output');
-    if (responseOutput) {
-      setTimeout(function () {
-        responseOutput.classList.add('hide');
-        setTimeout(() => responseOutput.style.display = 'none', 1000); // Wait for fade-out to complete
-      }, 5000);
-    }
-  }, false);
 });
+
+// hide form success & error message
+document.addEventListener('wpcf7submit', function () {
+  const responseOutputs = document.querySelectorAll('.wpcf7-response-output');
+
+  responseOutputs.forEach(function (responseOutput) {
+    // Show message initially
+    responseOutput.style.display = 'block';
+    responseOutput.classList.remove('hide');
+
+    // 5 seconds ke baad fade-out start karte hain
+    setTimeout(function () {
+      responseOutput.classList.add('hide'); // Start fade-out via CSS
+
+      // 1 second (fade-out duration) ke baad display:none aur hide hatana
+      setTimeout(function () {
+        responseOutput.style.display = 'none';
+        responseOutput.classList.remove('hide');
+      }, 1000);
+    }, 5000);
+  });
+}, false);
