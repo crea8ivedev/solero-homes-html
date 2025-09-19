@@ -1354,11 +1354,11 @@ video::-webkit-media-controls {
 }
 
 .footer form.invalid .wpcf7-response-output {
-	color: red !important;
+	color: #dc3232 !important;
 }
 
 .footer form.sent .wpcf7-response-output {
-	color: green !important;
+	color: #46b450 !important;
 }
 
 .footer .wpcf7-response-output.hide {
@@ -1427,6 +1427,16 @@ video::-webkit-media-controls {
 
     @media (max-width: 1200px) {
         height: auto;
+    }
+}
+
+.banner-wrapper .banner-box .banner-img img {
+    object-fit: contain !important;
+    transform: scale(3.9) translateX(-9px) translateY(-8px);
+
+    @media (max-width: 1200px) {
+        object-fit: cover !important;
+        transform: unset;
     }
 }
 
